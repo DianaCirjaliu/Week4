@@ -1,0 +1,77 @@
+@import url("https://fonts.cdnfonts.com/css/sf-funk-master");
+.header {
+  display: flex;
+}
+
+.header h1 {
+  color: white;
+  font-size: 4vh;
+  align-self: center;
+}
+
+.main {
+  border: 15px double rgb(24, 144, 165);
+}
+
+.info-box {
+  width: 300px;
+  border: 1px solid white;
+  margin: 20px;
+  padding: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "SF Funk Master", sans-serif;
+  margin: 0;
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 100px;
+  grid-template-rows: 100px auto 100px;
+  min-height: 100dvh;
+  grid-template-areas: "header header header" "sidebarL main sidebarR" "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar-left {
+  grid-area: sidebarL;
+}
+
+.sidebar-right {
+  grid-area: sidebarR;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main {
+  grid-area: main;
+  background-color: white;
+  border-radius: 30px;
+}
+
+@media (max-width: 900px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--frame, 100px) auto var(--frame, 100px);
+    grid-template-areas: "header" "main" "footer";
+  }
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
