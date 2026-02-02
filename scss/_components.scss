@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+}
+
+.header h1{
+    color: white;
+    font-size: 4vh;
+    align-self: center;
+}
+
+.main {
+    border: 15px double rgb(24, 144, 165);
+}
+
+.info-box{
+    width: 300px;
+    border: 1px solid white;
+    margin: 20px;
+    padding: 10px;
+}
