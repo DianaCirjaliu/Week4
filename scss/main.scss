@@ -10,7 +10,7 @@
 }
 
 html, body{
-    font-family: 'SF Funk Master', sans-serif;
+    font-family: $font, sans-serif;
     margin: 0;
     background: $background;
 }
@@ -36,10 +36,7 @@ html, body{
 .sidebar-left {grid-area: sidebarL;}
 .sidebar-right {grid-area: sidebarR}
 .footer {grid-area: footer;}
-.main {
-    grid-area: main;
-    background-color: white;
-    border-radius: 30px;}
+.main {grid-area: main;}
 
 @media (max-width: 900px) {
   .parent {

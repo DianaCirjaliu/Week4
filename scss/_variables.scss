@@ -1,7 +1,25 @@
-@import url('https://fonts.cdnfonts.com/css/sf-funk-master');
-$font:'SF Funk Master';
+@import url('https://fonts.cdnfonts.com/css/soonday-96176');
+$font:'Soonday';
 
 $frame: clamp(12px, 3vw, 28px);
 $frame-size: 100px;
 
-$background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+$background:radial-gradient(circle, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #cb78be, #c086d4, #b194e8, #80b4ff, #3ed0ff, #16e8ff, #5ffbf1);
+
+$bg-hover:#eee;
+$transform:scale(105%);
+$animation:movingBorders 3s infinite;
+
+@keyframes movingBorders {
+  0% {
+    border-color: #fce4e4;
+  }
+
+  50% {
+    border-color: #ffd8d8;
+  }
+
+  90% {
+    border-color: #fce4e4;
+  }
+}
