@@ -5,25 +5,49 @@ var closeBtn = document.getElementById('closeBtn');
 popBtn.onclick = function () { return sideBox.classList.add('active'); };
 closeBtn.onclick = function () { return sideBox.classList.remove('active'); };
 //main image logic
-var canvas = document.getElementById('myCanvas');
-var ctx = canvas.getContext("2d");
 var addImg = document.getElementById('addBtn');
 var clearImg = document.getElementById('clearBtn');
+var main = document.querySelector('main');
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext("2d");
 var images = ['./assets/1.png', './assets/2.png', './assets/3.png', './assets/4.png'];
-function addRandomImg() {
+;
+var savedImg = [];
+function initCanvas() {
+    if (main && canvas) {
+        canvas.width = main.clientWidth;
+        canvas.height = main.clientHeight;
+    }
+}
+function drawImg(src, x, y) {
     var img = new Image();
-    var src = images[Math.floor(Math.random() * images.length)];
-    img.src = src;
+    img.src = images[Math.floor(Math.random() * images.length)];
     img.onload = function () {
-        var dwidth = 50;
-        var dheight = 50;
-        var x = Math.random() * (canvas.width - img.width);
-        var y = Math.random() * (canvas.height - img.height);
-        ctx === null || ctx === void 0 ? void 0 : ctx.drawImage(img, x, y, dwidth, dheight);
+        ctx === null || ctx === void 0 ? void 0 : ctx.drawImage(img, x, y, 100, 100);
     };
 }
+function addRandomImg() {
+    var random = images[Math.floor(Math.random() * images.length)];
+    var x = Math.random() * (canvas.width - 100);
+    var y = Math.random() * (canvas.height - 100);
+    var newImg = { src: random, x: x, y: y };
+    savedImg.push(newImg);
+    localStorage.setItem('savedImg', JSON.stringify(savedImg));
+    drawImg(newImg.src, newImg.x, newImg.y);
+}
+window.addEventListener('load', function () {
+    initCanvas();
+    var data = localStorage.getItem('savedImg');
+    if (data) {
+        savedImg = JSON.parse(data);
+        savedImg.forEach(function (img) { return drawImg(img.src, img.x, img.y); });
+    }
+});
+addImg.onclick = addRandomImg;
 function clearCanvas() {
     ctx === null || ctx === void 0 ? void 0 : ctx.clearRect(0, 0, canvas.width, canvas.height);
+    savedImg = [];
+    localStorage.removeItem('savedImg');
 }
 addImg.onclick = addRandomImg;
 clearImg.onclick = clearCanvas;
