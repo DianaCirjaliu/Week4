@@ -5,38 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kitty collage</title>
 <link rel="stylesheet" href="main.css">
+<script defer src="src/main.js"></script>
 </head>
 <body> 
     <div class="parent">
         <header class="header">
             <h1>Create your own kitty collage</h1>
             <div class="spacer"></div>
-            <button class="popup-btn"></button>
+            <button class="popup-btn" id="popBtn"></button>
+            <div class="side-box" id="sideBox">
+                <button class="main-btn" id="closeBtn"><img src="./assets/close.png" alt="" width="40"></span></button>
+            </div>
         </header>
 
         <aside class="siderbar-left">
         </aside>
         
         <main class="main">
+        <canvas id="myCanvas">
+
+        </canvas>
         </main>
 
         <aside class="siderbar-right">
         </aside>
 
         <footer class="footer">
-            <button class="main-btn">Add kitty</button>
-            <button class="main-btn">Clear canva</button>
+            <button class="main-btn" id="addBtn">Add kitty</button>
+            <button class="main-btn" id="clearBtn">Clear canva</button>
             <button class="dir-btn">
-                <img src="./assets/arrow-left.png" alt="" width="40"parte</span>
+                <img src="./assets/arrow-left.png" alt="" width="40"></span>
             </button>
             <button class="dir-btn">
-                <img src="./assets/arrow-right.png" alt="" width="40"parte</span>
+                <img src="./assets/arrow-right.png" alt="" width="40"></span>
             </button>
             <button class="dir-btn">
-                <img src="./assets/arrow-up.png" alt="" width="40"parte</span>
+                <img src="./assets/arrow-up.png" alt="" width="40"parte></span>
             </button>
             <button class="dir-btn">
-                <img src="./assets/arrow-down.png" alt="" width="40"parte</span>
+                <img src="./assets/arrow-down.png" alt="" width="40"parte></span>
             </button>
         </footer>
     </div>

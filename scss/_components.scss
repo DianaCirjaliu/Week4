@@ -4,17 +4,22 @@
     display: flex;
     justify-content: center;
     position: relative;
+    align-items: center;
 }
 
 .header h1{
     color: white;
-    font-size: 4vh;
+    font-size: 6vh;
     align-self: center;
 }
 
 .main {
-    background: rgba(255, 255, 255, 0.576);
+    background: rgba(255, 255, 255, 0.399);
     border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    overflow: hidden;
 }
 
 .footer{
@@ -64,4 +69,39 @@
 .dir-btn,
 .popup-btn{
     @include btns;
+}
+
+.side-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: $background;
+    z-index: 1000;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+
+
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 20px;
+    z-index: 9999;
+}
+
+.side-box.active{
+    transform: translateX(0);
+}
+
+.side-box .main-btn{
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+#myCanva{
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
 }
