@@ -51,3 +51,21 @@ function clearCanvas() {
 }
 addImg.onclick = addRandomImg;
 clearImg.onclick = clearCanvas;
+//info window logic 
+var scrollEl = document.getElementById('scrollPos');
+var dimensionEl = document.getElementById('innerDim');
+function updateState() {
+    var scrollX = Math.round(window.scrollX);
+    var scrollY = Math.round(window.scrollY);
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    if (scrollEl) {
+        scrollEl.innerText = "X: ".concat(scrollX, ", Y:").concat(scrollY);
+    }
+    if (dimensionEl) {
+        dimensionEl.innerText = "".concat(width, "px x ").concat(height, "px");
+    }
+}
+window.addEventListener('scroll', updateState);
+window.addEventListener('resize', updateState);
+updateState();

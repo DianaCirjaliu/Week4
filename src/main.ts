@@ -74,3 +74,28 @@ function clearCanvas() {
 
 addImg.onclick = addRandomImg;
 clearImg.onclick = clearCanvas;
+
+//info window logic 
+const scrollEl = document.getElementById('scrollPos') as HTMLElement;
+const dimensionEl = document.getElementById('innerDim') as HTMLElement;
+
+function updateState(){
+    const scrollX = Math.round(window.scrollX);
+    const scrollY = Math.round(window.scrollY);
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    if(scrollEl){
+        scrollEl.innerText=`X: ${scrollX}, Y:${scrollY}`;
+    }
+
+    if(dimensionEl){
+        dimensionEl.innerText=`${width}px x ${height}px`;
+    }
+}
+
+window.addEventListener('scroll', updateState);
+window.addEventListener('resize',updateState);
+
+updateState();
