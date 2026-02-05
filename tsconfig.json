@@ -5,13 +5,16 @@
     // "rootDir": "./src",
     // "outDir": "./dist",
 
+    "target": "ES6",
+    "lib": ["DOM", "ES6", "DOM.Iterable"],
+
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
     "types": [],
     // For nodejs:
-    // "lib": ["esnext"],
+    // "lib": ["es2015"],
     // "types": ["node"],
     // and npm install -D @types/node
 
