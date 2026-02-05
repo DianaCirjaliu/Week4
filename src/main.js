@@ -133,7 +133,7 @@ function moveImg(dx, dy) {
         render();
     }
 }
-leftBtn === null || leftBtn === void 0 ? void 0 : leftBtn.addEventListener('click', function () { return moveImg(-10, 0); });
-rightBtn === null || rightBtn === void 0 ? void 0 : rightBtn.addEventListener('click', function () { return moveImg(10, 0); });
-upBtn === null || upBtn === void 0 ? void 0 : upBtn.addEventListener('click', function () { return moveImg(0, -10); });
-downBtn === null || downBtn === void 0 ? void 0 : downBtn.addEventListener('click', function () { return moveImg(0, 10); });
+leftBtn.addEventListener("click", function () { return moveImg(-10, 0); });
+rightBtn.addEventListener("click", function () { return moveImg(10, 0); });
+upBtn.addEventListener("click", function () { return moveImg(0, -10); });
+downBtn.addEventListener("click", function () { return moveImg(0, 10); });

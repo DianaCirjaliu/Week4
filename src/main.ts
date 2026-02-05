@@ -40,7 +40,7 @@ function initCanvas() {
 }
 
 function drawImg(src: string, x: number, y: number) {
-  if(!ctx) return;
+  if (!ctx) return;
   const img = new Image();
   img.src = src;
   img.onload = () => {
@@ -48,17 +48,16 @@ function drawImg(src: string, x: number, y: number) {
   };
 }
 
-function render(){
-  if(!ctx) return;
-  ctx?.clearRect(0,0, canvas.width, canvas.height);
-  savedImg.forEach(img => {
+function render() {
+  if (!ctx) return;
+  ctx?.clearRect(0, 0, canvas.width, canvas.height);
+  savedImg.forEach((img) => {
     drawImg(img.src, img.x, img.y);
-    if(img.selected){
+    if (img.selected) {
       ctx.strokeStyle = "pink";
       ctx?.strokeRect(img.x, img.y, default_size, default_size);
-    }});
-
-  
+    }
+  });
 }
 
 function addRandomImg() {
@@ -123,10 +122,10 @@ updateState();
 
 //move objects logic
 
-const leftBtn = document.getElementById("leftBtn");
-const rightBtn = document.getElementById("rightBtn");
-const upBtn = document.getElementById("upBtn");
-const downBtn = document.getElementById("downBtn");
+const leftBtn = document.getElementById("leftBtn") as HTMLButtonElement;
+const rightBtn = document.getElementById("rightBtn") as HTMLButtonElement;
+const upBtn = document.getElementById("upBtn") as HTMLButtonElement;
+const downBtn = document.getElementById("downBtn") as HTMLButtonElement;
 
 function selectImg(mouseX: number, mouseY: number) {
   //reset all the selection before
@@ -157,13 +156,11 @@ canvas.addEventListener("click", (e: MouseEvent) => {
 });
 
 function moveImg(dx: number, dy: number) {
-
   let img: Img | undefined;
 
-  for (let i = 0; i < savedImg.length; i++){
-    if(savedImg[i]?.selected === true){
+  for (let i = 0; i < savedImg.length; i++) {
+    if (savedImg[i]?.selected === true) {
       img = savedImg[i];
-
     }
   }
   if (img) {
@@ -171,11 +168,9 @@ function moveImg(dx: number, dy: number) {
     img.y += dy;
     render();
   }
-
 }
 
-
-leftBtn?.addEventListener('click',() => moveImg(-10,0));
-rightBtn?.addEventListener('click', () => moveImg(10,0));
-upBtn?.addEventListener('click', () => moveImg(0,-10));
-downBtn?.addEventListener('click', () => moveImg(0,10));
+leftBtn.addEventListener("click", () => moveImg(-10, 0));
+rightBtn.addEventListener("click", () => moveImg(10, 0));
+upBtn.addEventListener("click", () => moveImg(0, -10));
+downBtn.addEventListener("click", () => moveImg(0, 10));
