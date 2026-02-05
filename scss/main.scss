@@ -1,50 +1,57 @@
-@use 'variables' as *;
-@use 'typography' as  *;
-@use 'components' as *;
+@use "variables" as *;
+@use "components" as *;
 
 //reset layout
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
-html, body{
-    font-family: $font, sans-serif;
-    margin: 0;
-    background: $background;
+html,
+body {
+  font-family: $font, sans-serif;
+  margin: 0;
+  background: $background;
 }
 
-@mixin card-surface{
-    
+@mixin card-surface {
 }
-
 
 .parent {
-    display: grid;
-    grid-template-columns: $frame-size minmax(0, 1fr) $frame-size;
-    grid-template-rows: $frame-size auto $frame-size;
+  display: grid;
+  grid-template-columns: $frame-size minmax(0, 1fr) $frame-size;
+  grid-template-rows: $frame-size auto $frame-size;
 
-    min-height: 100dvh;
-    grid-template-areas: 
-            "header header header"
-            "sidebarL main sidebarR"
-            "footer footer footer";
+  min-height: 100dvh;
+  grid-template-areas:
+    "header header header"
+    "sidebarL main sidebarR"
+    "footer footer footer";
 }
 
-.header {grid-area: header;}
-.sidebar-left {grid-area: sidebarL;}
-.sidebar-right {grid-area: sidebarR}
-.footer {grid-area: footer;}
-.main {grid-area: main;}
+.header {
+  grid-area: header;
+}
+.sidebar-left {
+  grid-area: sidebarL;
+}
+.sidebar-right {
+  grid-area: sidebarR;
+}
+.footer {
+  grid-area: footer;
+}
+.main {
+  grid-area: main;
+}
 
 @media (max-width: 900px) {
   .parent {
-
- grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows:
       var(--frame, $frame-size)
-      auto               
+      auto
       var(--frame, $frame-size);
 
     grid-template-areas:
@@ -53,16 +60,16 @@ html, body{
       "footer";
   }
 
-
-.sidebar-left,
-  .sidebar-right { display: none; }
-
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
 }
 
 .header,
 .sidebar-left,
 .sidebar-right,
 .main,
-.footer{
-    @include card-surface;
+.footer {
+  @include card-surface;
 }

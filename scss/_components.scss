@@ -1,115 +1,113 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 .header {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
 }
 
-.header h1{
-    color: white;
-    font-size: 6vh;
-    align-self: center;
+.header h1 {
+  color: white;
+  font-size: 6vh;
+  align-self: center;
 }
 
 .main {
-    background: rgba(255, 255, 255, 0.399);
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh;
-    overflow: hidden;
-    position: relative;
+  background: rgba(255, 255, 255, 0.399);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-@mixin btns{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 25px 20px 22px;
-    margin: 10px;
-    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    background-color: #e8e8e8;
-    border-color: #ffe2e2;
-    border-style: solid;
-    border-width: 9px;
-    border-radius: 35px;
-    font-size: 25px;
-    cursor: pointer;
-    font-weight: 900;
-    color: rgb(134, 124, 124);
-    font-family: monospace;
-    word-spacing: -2px;
+@mixin btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 25px 20px 22px;
+  margin: 10px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #e8e8e8;
+  border-color: #ffe2e2;
+  border-style: solid;
+  border-width: 9px;
+  border-radius: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  color: rgb(134, 124, 124);
+  font-family: monospace;
+  word-spacing: -2px;
 
-    &:hover{
-        background-color: $bg-hover;
-        transform: $transform;
-        animation: $animation;
-    }
-    
+  &:hover {
+    background-color: $bg-hover;
+    transform: $transform;
+    animation: $animation;
+  }
 }
 
-.popup-btn{
-    width: 80px;
-    height: 80px;
-    background-image:url("./assets/image-popup.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
+.popup-btn {
+  width: 80px;
+  height: 80px;
+  background-image: url("./assets/image-popup.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
 }
 
 .main-btn,
 .dir-btn,
-.popup-btn{
-    @include btns;
+.popup-btn {
+  @include btns;
 }
 
-.side-box{
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: 280px;
-    background: $background;
-    z-index: 1000;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+.side-box {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 280px;
+  background: $background;
+  z-index: 1000;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
 
-
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    padding: 20px;
-    z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 20px;
+  z-index: 9999;
 }
 
-.side-box.active{
-    transform: translateX(0);
+.side-box.active {
+  transform: translateX(0);
 }
 
-.side-box .main-btn{
-    margin-bottom: 0;
-    margin-top: auto;
+.side-box .main-btn {
+  margin-bottom: 0;
+  margin-top: auto;
 }
 
-#myCanva{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    height: 80vh;
-    display: block;
+#myCanva {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  height: 80vh;
+  display: block;
 }

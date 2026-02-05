@@ -1,14 +1,28 @@
-@import url('https://fonts.cdnfonts.com/css/soonday-96176');
-$font:'Soonday';
+@import url("https://fonts.cdnfonts.com/css/soonday-96176");
+$font: "Soonday";
 
 $frame: clamp(12px, 3vw, 28px);
 $frame-size: 100px;
 
-$background:radial-gradient(circle, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #cb78be, #c086d4, #b194e8, #80b4ff, #3ed0ff, #16e8ff, #5ffbf1);
+$background: radial-gradient(
+  circle,
+  #d16ba5,
+  #d16ba5,
+  #d16ba5,
+  #d16ba5,
+  #d16ba5,
+  #cb78be,
+  #c086d4,
+  #b194e8,
+  #80b4ff,
+  #3ed0ff,
+  #16e8ff,
+  #5ffbf1
+);
 
-$bg-hover:#eee;
-$transform:scale(105%);
-$animation:movingBorders 3s infinite;
+$bg-hover: #eee;
+$transform: scale(105%);
+$animation: movingBorders 3s infinite;
 
 @keyframes movingBorders {
   0% {

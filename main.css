@@ -124,7 +124,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: "Soonday", sans-serif;
   margin: 0;
   background: radial-gradient(circle, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #d16ba5, #cb78be, #c086d4, #b194e8, #80b4ff, #3ed0ff, #16e8ff, #5ffbf1);
